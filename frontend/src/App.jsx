@@ -1,7 +1,7 @@
-import Dashboard from "./pages/Dashboard";
+import ImageUpload from "./pages/ImageUpload";
 
 function App() {
-  return <Dashboard />;
+  return <ImageUpload />;
 }
 
 export default App;
