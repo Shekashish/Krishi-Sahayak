@@ -11,25 +11,25 @@ function App() {
     <BrowserRouter>
       <Routes>
 
+        {/* Starting Page */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
+
         {/* Login */}
         <Route path="/login" element={<Login />} />
 
         {/* Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
 
-        {/* Crop Image Upload */}
+        {/* Image Upload */}
         <Route path="/upload" element={<ImageUpload />} />
 
-        {/* Production Result */}
+        {/* Production */}
         <Route path="/production" element={<Production />} />
 
-        {/* Weather Dashboard */}
+        {/* Weather */}
         <Route path="/weather" element={<Weather />} />
 
-        {/* Default */}
-        <Route path="/" element={<Navigate to="/login" replace />} />
-
-        {/* Invalid URL */}
+        {/* Unknown URL */}
         <Route path="*" element={<Navigate to="/login" replace />} />
 
       </Routes>
