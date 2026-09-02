@@ -738,3 +738,65 @@
     width: 100px;
   }
 }
+.quick-action {
+  border-bottom: 1px solid #eee9df;
+}
+
+.quick-action-link {
+  width: 100%;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  padding: 12px 0;
+  transition: 0.2s ease;
+}
+
+.quick-action-link:hover {
+  transform: translateX(4px);
+}
+
+.quick-action-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: #e8f0e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.weather-icon {
+  background: #f6ead0;
+}
+
+.production-icon {
+  background: #eee3d8;
+}
+
+.quick-action-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.quick-action-text strong {
+  color: #193326;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.quick-action-text span {
+  color: #929991;
+  font-size: 11px;
+}
+
+.quick-action-arrow {
+  color: #9ba29d;
+  font-size: 24px;
+  padding-right: 5px;
+}

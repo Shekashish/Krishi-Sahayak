@@ -11,15 +11,18 @@ import {
   ThermometerSun,
 } from "lucide-react";
 
+import { Link } from "react-router-dom";
+
 import "./Dashboard.css";
 
 function Dashboard() {
   return (
     <div className="dashboard">
 
-      {/* Sidebar */}
+      {/* ================= SIDEBAR ================= */}
       <aside className="sidebar">
 
+        {/* Logo */}
         <div className="sidebar-brand">
           <div className="brand-mark">
             <Leaf size={21} />
@@ -28,46 +31,55 @@ function Dashboard() {
           <span>Krishi Sahayak</span>
         </div>
 
+
+        {/* Navigation */}
         <nav className="sidebar-nav">
 
           <p className="nav-label">MAIN MENU</p>
 
-          <a className="nav-item active">
+          <Link to="/dashboard" className="nav-item active">
             <BarChart3 size={19} />
             Dashboard
-          </a>
+          </Link>
 
-          <a className="nav-item">
+          <Link to="/upload" className="nav-item">
             <Sprout size={19} />
             My Crops
-          </a>
+          </Link>
 
-          <a className="nav-item">
+          <Link to="/upload" className="nav-item">
             <Camera size={19} />
             Disease Check
-          </a>
+          </Link>
 
-          <a className="nav-item">
+          <Link to="/weather" className="nav-item">
             <CloudSun size={19} />
             Weather
-          </a>
+          </Link>
 
-          <a className="nav-item">
+          <Link to="/production" className="nav-item">
             <BarChart3 size={19} />
             Yield Prediction
-          </a>
+          </Link>
 
-          <p className="nav-label settings-label">ACCOUNT</p>
 
-          <a className="nav-item">
+          <p className="nav-label settings-label">
+            ACCOUNT
+          </p>
+
+          <a href="#" className="nav-item">
             ⚙
             Settings
           </a>
 
         </nav>
 
+
+        {/* Help */}
         <div className="sidebar-bottom">
+
           <div className="help-box">
+
             <div className="help-icon">
               ?
             </div>
@@ -76,19 +88,22 @@ function Dashboard() {
               <strong>Need help?</strong>
               <span>Ask Krishi Sahayak</span>
             </div>
+
           </div>
+
         </div>
 
       </aside>
 
 
-      {/* Main Content */}
+      {/* ================= MAIN CONTENT ================= */}
       <main className="dashboard-main">
 
         {/* Header */}
         <header className="dashboard-header">
 
           <div>
+
             <p className="page-date">
               WEDNESDAY, AUGUST 26, 2026
             </p>
@@ -100,7 +115,9 @@ function Dashboard() {
             <p className="header-subtitle">
               Here's what's happening with your farm today.
             </p>
+
           </div>
+
 
           <div className="header-actions">
 
@@ -109,7 +126,9 @@ function Dashboard() {
               <span></span>
             </button>
 
+
             <div className="profile">
+
               <div className="profile-avatar">
                 F
               </div>
@@ -118,6 +137,7 @@ function Dashboard() {
                 <strong>Farmer</strong>
                 <small>Farm Owner</small>
               </div>
+
             </div>
 
           </div>
@@ -125,16 +145,21 @@ function Dashboard() {
         </header>
 
 
-        {/* Overview Cards */}
+        {/* ================= OVERVIEW CARDS ================= */}
         <section className="overview-grid">
 
-          <div className="overview-card weather-card">
+          {/* Weather */}
+          <Link
+            to="/weather"
+            className="overview-card weather-card"
+          >
 
             <div className="card-icon weather-icon">
               <CloudSun size={23} />
             </div>
 
             <div className="overview-content">
+
               <span>Today's Weather</span>
 
               <div className="weather-value">
@@ -144,18 +169,22 @@ function Dashboard() {
               <small>
                 Partly cloudy
               </small>
+
             </div>
 
             <div className="weather-meta">
+
               <span>
                 <Droplets size={14} />
                 68%
               </span>
+
             </div>
 
-          </div>
+          </Link>
 
 
+          {/* Active Crops */}
           <div className="overview-card">
 
             <div className="card-icon crop-icon">
@@ -163,6 +192,7 @@ function Dashboard() {
             </div>
 
             <div className="overview-content">
+
               <span>Active Crops</span>
 
               <div className="big-number">
@@ -172,18 +202,24 @@ function Dashboard() {
               <small>
                 2 healthy · 1 needs attention
               </small>
+
             </div>
 
           </div>
 
 
-          <div className="overview-card">
+          {/* Expected Yield */}
+          <Link
+            to="/production"
+            className="overview-card"
+          >
 
             <div className="card-icon yield-icon">
               <BarChart3 size={22} />
             </div>
 
             <div className="overview-content">
+
               <span>Expected Yield</span>
 
               <div className="big-number">
@@ -193,17 +229,19 @@ function Dashboard() {
               <small className="positive">
                 ↑ 8% from last season
               </small>
+
             </div>
 
-          </div>
+          </Link>
 
         </section>
 
 
-        {/* Dashboard Grid */}
+        {/* ================= DASHBOARD GRID ================= */}
         <section className="dashboard-grid">
 
-          {/* Crop Health */}
+
+          {/* ================= CROP HEALTH ================= */}
           <div className="dashboard-card crop-health">
 
             <div className="section-heading">
@@ -223,6 +261,8 @@ function Dashboard() {
 
             <div className="crop-list">
 
+
+              {/* Wheat */}
               <div className="crop-row">
 
                 <div className="crop-image wheat">
@@ -235,16 +275,19 @@ function Dashboard() {
                 </div>
 
                 <div className="health-score">
+
                   <div className="score-bar">
                     <span style={{ width: "92%" }}></span>
                   </div>
 
                   <strong>92%</strong>
+
                 </div>
 
               </div>
 
 
+              {/* Rice */}
               <div className="crop-row">
 
                 <div className="crop-image rice">
@@ -257,16 +300,19 @@ function Dashboard() {
                 </div>
 
                 <div className="health-score">
+
                   <div className="score-bar">
                     <span style={{ width: "86%" }}></span>
                   </div>
 
                   <strong>86%</strong>
+
                 </div>
 
               </div>
 
 
+              {/* Maize */}
               <div className="crop-row">
 
                 <div className="crop-image maize">
@@ -274,18 +320,23 @@ function Dashboard() {
                 </div>
 
                 <div className="crop-details">
+
                   <strong>Maize</strong>
+
                   <span className="attention">
                     Needs attention
                   </span>
+
                 </div>
 
                 <div className="health-score">
+
                   <div className="score-bar warning">
                     <span style={{ width: "78%" }}></span>
                   </div>
 
                   <strong>78%</strong>
+
                 </div>
 
               </div>
@@ -295,18 +346,24 @@ function Dashboard() {
           </div>
 
 
-          {/* Quick Actions */}
+          {/* ================= QUICK ACTIONS ================= */}
           <div className="dashboard-card quick-actions">
 
             <div className="section-heading">
+
               <div>
                 <h2>Quick Actions</h2>
                 <p>Tools for your farm</p>
               </div>
+
             </div>
 
 
-            <button className="action-item">
+            {/* Disease Check */}
+            <Link
+              to="/upload"
+              className="action-item"
+            >
 
               <div className="action-icon camera-action">
                 <Camera size={20} />
@@ -319,10 +376,14 @@ function Dashboard() {
 
               <ChevronRight size={17} />
 
-            </button>
+            </Link>
 
 
-            <button className="action-item">
+            {/* Weather */}
+            <Link
+              to="/weather"
+              className="action-item"
+            >
 
               <div className="action-icon weather-action">
                 <CloudSun size={20} />
@@ -335,10 +396,14 @@ function Dashboard() {
 
               <ChevronRight size={17} />
 
-            </button>
+            </Link>
 
 
-            <button className="action-item">
+            {/* Production */}
+            <Link
+              to="/production"
+              className="action-item"
+            >
 
               <div className="action-icon yield-action">
                 <BarChart3 size={20} />
@@ -351,16 +416,18 @@ function Dashboard() {
 
               <ChevronRight size={17} />
 
-            </button>
+            </Link>
 
           </div>
 
         </section>
 
 
-        {/* Bottom Info */}
+        {/* ================= BOTTOM INFO ================= */}
         <section className="bottom-grid">
 
+
+          {/* Farming Tip */}
           <div className="tip-card">
 
             <div className="tip-icon">
@@ -368,6 +435,7 @@ function Dashboard() {
             </div>
 
             <div>
+
               <span>FARMING TIP</span>
 
               <h3>
@@ -378,26 +446,37 @@ function Dashboard() {
                 Keeping your soil moisture balanced can
                 help improve crop health and reduce water waste.
               </p>
+
             </div>
 
           </div>
 
 
+          {/* Field Conditions */}
           <div className="weather-mini">
 
             <div className="weather-mini-header">
+
               <div>
+
                 <span>FIELD CONDITIONS</span>
-                <h3>Today's conditions</h3>
+
+                <h3>
+                  Today's conditions
+                </h3>
+
               </div>
 
               <Cloud size={22} />
+
             </div>
+
 
             <div className="condition-row">
               <span>Temperature</span>
               <strong>28°C</strong>
             </div>
+
 
             <div className="condition-row">
               <span>Humidity</span>

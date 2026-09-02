@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Eye, EyeOff, Leaf, ArrowRight } from "lucide-react";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="login-page">
@@ -113,6 +115,10 @@ function Login() {
             </button>
 
           </form>
+
+          <button onClick={() => navigate("/dashboard")}>
+  Login
+</button>
 
 
           <div className="divider">
